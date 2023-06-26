@@ -22,42 +22,39 @@ export default function Home() {
               />
             </svg>
           </div>
-          <p className="font-bold px-4">
-            News
-          </p>
+          <p className="font-bold px-4">News</p>
         </h1>
         <section className="grid gap-4 drop-shadow-md text-sm md:grid-cols-3">
-          <a
-            href="https://github.com/sgangaprasath/Publications/raw/master/KFTutorial.pdf"
-            className="group bg-white dark:bg-black rounded-xl border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          >
-            <div className="flex flex-row items-center justify-start">
-              <p className="text-[9px] font-normal text-gray-400">
-                20 Jun, 2023
-              </p>
-            </div>
-            <p className="font-bold text-2xl bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
-            Kalman filter
-            </p>
-            New tutorial titled "Revisiting linear filtering, the Bayesian
-            paradigm & optimal state estimation" is out.
-          </a>
-          <a
-            href="https://github.com/sgangaprasath/Publications/raw/master/KFTutorial.pdf"
-            className="group bg-white dark:bg-black rounded-xl border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          >
-            New tutorial titled "Revisiting linear filtering, the Bayesian
-            paradigm & optimal state estimation"
-          </a>
-          <a
-            href="https://github.com/sgangaprasath/Publications/raw/master/KFTutorial.pdf"
-            className="group bg-white dark:bg-black rounded-xl border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          >
-            New tutorial titled "Revisiting linear filtering, the Bayesian
-            paradigm & optimal state estimation"
-          </a>
+          {News()}
+          {News()}
+          {News()}
+          {News()}
+          {News()}
         </section>
       </div>
     </>
+  );
+}
+
+function News() {
+  return (
+      <a
+        href="https://github.com/sgangaprasath/Publications/raw/master/KFTutorial.pdf"
+        className="group bg-white dark:bg-black rounded-xl border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      >
+        <div className="flex flex-row items-center justify-between">
+          <p className="text-[9px] font-normal text-gray-400">20 Jun, 2023</p>
+          <div className="text-[9px] font-normal text-gray-400">
+            20 Jun, 2023
+          </div>
+        </div>
+        <p className="font-bold text-2xl bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
+          Kalman filter
+        </p>
+        <p>
+          New tutorial titled "Revisiting linear filtering, the Bayesian
+          paradigm & optimal state estimation" is out.
+        </p>
+      </a>
   );
 }
