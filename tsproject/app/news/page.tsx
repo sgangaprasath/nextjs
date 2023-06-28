@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-center justify-between gap-10 max-w-5xl">
+      <div className="flex flex-col items-center justify-between gap-10 max-w-5xl py-20">
         <h1 className="flex flex-row items-center justify-center p-2 text-4xl">
           <div className="opacity-100">
             <svg
@@ -13,7 +13,7 @@ export default function Home() {
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-10 h-10"
+              className="w-10 h-10"
             >
               <path
                 stroke-linecap="round"
@@ -44,8 +44,8 @@ function News() {
       >
         <div className="flex flex-row items-center justify-between">
           <p className="text-[9px] font-normal text-gray-400">20 Jun, 2023</p>
-          <div className="text-[9px] font-normal text-gray-400">
-            20 Jun, 2023
+          <div className="px-2 bg-green-200 rounded-full text-[10px] font-normal text-green-600">
+            #control
           </div>
         </div>
         <p className="font-bold text-2xl bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">

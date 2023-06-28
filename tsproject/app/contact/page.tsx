@@ -3,17 +3,17 @@ import "../globals.css";
 export default function Home() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between gap-10 max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between gap-10 max-w-5xl py-20">
         <div className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-            <div className="p-3 bg-white dark:bg-black border border-gray-400 rounded-full opacity-40 dark:border-neutral-300">
+            <div className="p-3 bg-white dark:bg-black border border-gray-300 rounded-full opacity-60 dark:border-neutral-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-6"
+                className="w-6 h-6"
               >
                 <path
                   stroke-linecap="round"
