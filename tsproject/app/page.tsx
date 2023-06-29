@@ -22,7 +22,7 @@ export default function Home() {
           {/* News */}
           <Link
             href="/news"
-            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-violet-300 hover:bg-violet-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2
               className={`flex flex-row items-center justify-center gap-2 mb-3 text-2xl font-semibold`}
@@ -68,7 +68,7 @@ export default function Home() {
           {/* Blog */}
           <Link
             href="/blog"
-            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-sky-300 hover:bg-sky-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2
               className={`flex flex-row items-center justify-center gap-2 mb-3 text-2xl font-semibold`}
@@ -114,7 +114,7 @@ export default function Home() {
           {/* Research */}
           <Link
             href="/research"
-            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-rose-300 hover:bg-rose-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2
               className={`flex flex-row items-center justify-center gap-2 mb-3 text-2xl font-semibold`}
@@ -160,7 +160,7 @@ export default function Home() {
           {/* Outreach */}
           <Link
             href="/outreach"
-            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-emerald-300 hover:bg-emerald-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2
               className={`flex flex-row items-center justify-center gap-2 mb-3 text-2xl font-semibold`}

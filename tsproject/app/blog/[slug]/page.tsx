@@ -2,7 +2,7 @@ import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import getPostMetadata from "@/components/getPostMetadata";
-import { MDXRemote } from "next-mdx-remote/rsc";
+// import { MDXRemote } from "next-mdx-remote/rsc";
 
 const getPostContent = (slug: string) => {
   const folder = "blog/";
@@ -25,11 +25,11 @@ const PostPage = (props: any) => {
   return (
     <div className="max-w-5xl">
       <div className="text-center">
-        <h1 className="text-2xl font-bold">{post.data.title}</h1>
+        <h1 className="text-4xl font-bold">{post.data.title}</h1>
         <p className="text-gray-400 mt-2">{post.data.date}</p>
       </div>
 
-      <article className="prose">
+      <article className="prose prose-stone max-w-none dark:prose-invert">
         <Markdown>{post.content}</Markdown>
         {/* <MDXRemote source={post.content} /> */}
       </article>

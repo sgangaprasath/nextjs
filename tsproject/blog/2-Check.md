@@ -1,10 +1,13 @@
 ---
-title: "Offer new course in AM"
-subtitle: "A tutorial on the steps to float a new course."
+title: "Getting Started with AWS"
+subtitle: "Create an AWS account and set up CLI/SDK access."
 date: "2020-12-27"
-category: "Course"
+category: "AWS accnt"
+author: "Borrowed"
+desig: "Graduate Student"
+image: "/profile.svg"
 ---
-I **love** using [Next.js](https://nextjs.org/)
+
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.
 
 In fact, most of the projects on this site will require cloud interaction of some sort—particularly with AWS's serverless products.

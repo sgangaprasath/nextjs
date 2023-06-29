@@ -3,5 +3,8 @@ export interface PostMetadata {
     date: string;
     subtitle: string;
     category: string;
+    author: string;
     slug: string;
+    image: string;
+    desig: string;
   }
