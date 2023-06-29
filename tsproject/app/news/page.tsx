@@ -44,7 +44,7 @@ function News() {
       >
         <div className="flex flex-row items-center justify-between">
           <p className="text-[9px] font-normal text-gray-400">20 Jun, 2023</p>
-          <div className="px-2 bg-green-200 rounded-full text-[10px] font-normal text-green-600">
+          <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
             #control
           </div>
         </div>
