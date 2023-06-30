@@ -10,7 +10,7 @@ export default function NavBar() {
           <Link href={"/"}>home</Link>
         </li>
         <li className="linkStyle">
-          <Link href={"/"}>members</Link>
+          <Link href={"/members"}>members</Link>
         </li>
         <li className="linkStyle">
           <Link href={"/"}>publications</Link>

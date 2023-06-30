@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import Link from "next/link";
 
 export interface NewsMetaData {
   id: number;
@@ -12,17 +13,20 @@ export interface NewsMetaData {
 const getNewsContent = (): NewsMetaData[] => {
   const jsonString = fs.readFileSync("./app/json/data.json", "utf-8");
   const jsonData = JSON.parse(jsonString);
+  jsonData.sort(function(a:NewsMetaData, b:NewsMetaData){
+    return a.id - b.id;
+  }).reverse();
   return jsonData;
 };
 
 const NewsPreview = (props: NewsMetaData) => {
   return (
-    <a
+    <Link
       href={props.link}
-      className="group shadow-lg bg-white dark:bg-black rounded-lg border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      className="group flex flex-col items-start justify-around w-auto h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 px-5 py-4 transition-colors hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
     >
-      <div className="flex flex-row items-center justify-between mb-2">
-        <p className="text-[9px] font-normal text-gray-400">{props.date}</p>
+      <div className="flex flex-row w-full items-center justify-between mb-1">
+        <p className="text-xs text-gray-400">{props.date}</p>
         <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
           {props.tag}
         </div>
@@ -30,8 +34,8 @@ const NewsPreview = (props: NewsMetaData) => {
       <p className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
         {props.title}
       </p>
-      <p className="text-sm">{props.message}</p>
-    </a>
+      <p className="text-slate-700 my-1">{props.message}</p>
+    </Link>
   );
 };
 
@@ -72,31 +76,11 @@ const NewsPage = () => {
           <p className="font-bold px-4">News</p>
         </h1>
       </div>
-      <div className="grid md:grid-cols-3 gap-4 w-auto max-w-5xl mb-4">
+      <section className="grid grid-cols-1 gap-4 max-w-5xl mb-10 drop-shadow-xl text-sm md:grid-cols-3">
         {newsPreviews}
-      </div>
+      </section>
     </>
   );
 };
 
 export default NewsPage;
-
-{
-  /* <a
-      href={props.link}
-      className="group bg-white dark:bg-black rounded-xl border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-    >
-      <div className="flex flex-row items-center justify-between">
-        <p className="text-[9px] font-normal text-gray-400">{props.date}</p>
-        <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
-        {props.tag}
-        </div>
-      </div>
-      <p className="font-bold text-2xl bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
-      {props.title}
-      </p>
-      <p>
-       {props.message}
-      </p>
-    </a> */
-}
