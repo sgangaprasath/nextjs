@@ -1,8 +1,10 @@
-{
-    "record": {
-      "id": 8221,
-      "uid": "a15c1f1d-9e4e-4dc7-9c45-c04412fc5064",
-      "name": "Next.js",
-      "language": "JavaScript"
-    }
-  } 
+[
+  {
+    "id": 1,
+    "title": "Bee collective behaviour",
+    "message": "Our paper on flow mediated communication in bee collectives is published in Proc. Roy. Soc. A",
+    "link": "https://royalsocietypublishing.org/doi/10.1098/rspa.2022.0470",
+    "date": "11-01-2023",
+    "tag": "Behaviour"
+  }
+]

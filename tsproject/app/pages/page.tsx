@@ -1,8 +1,54 @@
-import Image from "next/image";
-import Link from "next/link";
-import Head from "next/head";
+import * as fs from "fs";
 
-export default function Home() {
+export interface NewsMetaData {
+  id: number;
+  title: string;
+  message: string;
+  link: string;
+  date: string;
+  tag: string;
+}
+
+const getNewsContent = (): NewsMetaData[] => {
+  const jsonString = fs.readFileSync("./app/json/data.json", "utf-8");
+  const jsonData = JSON.parse(jsonString);
+  return jsonData;
+};
+
+const NewsPreview = (props: NewsMetaData) => {
+  return (
+    <a
+      href={props.link}
+      className="group shadow-lg bg-white dark:bg-black rounded-lg border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+    >
+      <div className="flex flex-row items-center justify-between mb-2">
+        <p className="text-[9px] font-normal text-gray-400">{props.date}</p>
+        <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
+          {props.tag}
+        </div>
+      </div>
+      <p className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
+        {props.title}
+      </p>
+      <p className="text-sm">{props.message}</p>
+    </a>
+  );
+};
+
+export const generateStaticParams = async () => {
+  const posts = getNewsContent();
+  return posts.map((post) => ({
+    id: post.id,
+  }));
+};
+
+const NewsPage = () => {
+  const posts = getNewsContent();
+  //   posts.map(({id,name }) => console.log(id, name));
+  const newsPreviews = posts.map((post) => (
+    <NewsPreview key={post.id} {...post} />
+  ));
+
   return (
     <>
       <div className="flex flex-col items-center justify-between gap-10 max-w-5xl py-20">
@@ -25,37 +71,32 @@ export default function Home() {
           </div>
           <p className="font-bold px-4">News</p>
         </h1>
-        <section className="grid gap-4 drop-shadow-md text-sm md:grid-cols-3">
-          {News()}
-          {News()}
-          {News()}
-          {News()}
-          {News()}
-        </section>
+      </div>
+      <div className="grid md:grid-cols-3 gap-4 w-auto max-w-5xl mb-4">
+        {newsPreviews}
       </div>
     </>
   );
-}
+};
 
-function News() {
-  return (
-    <a
-      href="https://github.com/sgangaprasath/Publications/raw/master/KFTutorial.pdf"
+export default NewsPage;
+
+{
+  /* <a
+      href={props.link}
       className="group bg-white dark:bg-black rounded-xl border border-gray-100 dark:border-neutral-600 px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
     >
       <div className="flex flex-row items-center justify-between">
-        <p className="text-[9px] font-normal text-gray-400">20 Jun, 2023</p>
+        <p className="text-[9px] font-normal text-gray-400">{props.date}</p>
         <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
-          Control
+        {props.tag}
         </div>
       </div>
       <p className="font-bold text-2xl bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
-        Kalman filter
+      {props.title}
       </p>
       <p>
-        New tutorial titled "Revisiting linear filtering, the Bayesian paradigm
-        & optimal state estimation" is out.
+       {props.message}
       </p>
-    </a>
-  );
+    </a> */
 }
