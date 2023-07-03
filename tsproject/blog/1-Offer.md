@@ -1,6 +1,6 @@
 ---
 title: "Offer new course in AM"
-subtitle: "A tutorial on the steps to float a new course."
+subtitle: "A tutorial on the steps to float a new course in Applied Mechanics department."
 date: "2020-12-27"
 category: "Course"
 author: "S Ganga Prasath"

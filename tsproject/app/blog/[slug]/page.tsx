@@ -28,7 +28,7 @@ const PostPage = (props: any) => {
         <p className="text-gray-400 mt-2">{post.data.date}</p>
       </div>
 
-      <article className="prose prose-stone max-w-none dark:prose-invert">
+      <article className="prose prose-stone max-w-none scroll-smooth dark:prose-invert">
         <Markdown>{post.content}</Markdown>
       </article>
     </div>

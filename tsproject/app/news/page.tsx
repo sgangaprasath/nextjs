@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface NewsMetaData {
   id: number;
@@ -9,14 +10,17 @@ export interface NewsMetaData {
   date: string;
   tag: string;
   color: string;
+  image: string;
 }
 
 const getNewsContent = (): NewsMetaData[] => {
   const jsonString = fs.readFileSync("./app/json/data.json", "utf-8");
   const jsonData = JSON.parse(jsonString);
-  jsonData.sort(function(a:NewsMetaData, b:NewsMetaData){
-    return a.id - b.id;
-  }).reverse();
+  jsonData
+    .sort(function (a: NewsMetaData, b: NewsMetaData) {
+      return a.id - b.id;
+    })
+    .reverse();
   return jsonData;
 };
 
@@ -24,18 +28,30 @@ const NewsPreview = (props: NewsMetaData) => {
   return (
     <Link
       href={props.link}
-      className="group flex flex-col items-start justify-around w-auto h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 px-5 py-4 transition-colors hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      className="group flex flex-row items-start justify-around w-auto h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
     >
-      <div className="flex flex-row w-full items-center justify-between mb-1">
-        <p className="text-xs text-gray-400">{props.date}</p>
-        <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
-          {props.tag}
+        {props.image !== "" && (
+          <Image
+            src={props.image}
+            width="0"
+            height="0"
+            alt="News blurb image"
+            sizes="100vw"
+            className="object-cover grayscale rounded-t-lg h-full w-28 hover:grayscale-0 md:rounded-none md:rounded-l-lg"
+          />
+        )}
+        <div className="px-5 py-4">
+          <div className="flex flex-row w-full items-center justify-between mb-1">
+            <p className="text-xs text-gray-400">{props.date}</p>
+            <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
+              {props.tag}
+            </div>
+          </div>
+          <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
+            {props.title}
+          </h2>
+          <p className="text-slate-700 my-1">{props.message}</p>
         </div>
-      </div>
-      <p className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
-        {props.title}
-      </p>
-      <p className="text-slate-700 my-1">{props.message}</p>
     </Link>
   );
 };
@@ -56,7 +72,7 @@ const NewsPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-between gap-10 max-w-5xl py-20">
+      <div className="flex flex-col items-center justify-between gap-10 max-w-5xl pt-20 pb-10">
         <h1 className="flex flex-row items-center justify-center p-2 text-4xl">
           <div className="opacity-100">
             <svg
@@ -77,7 +93,7 @@ const NewsPage = () => {
           <p className="font-bold px-4">News</p>
         </h1>
       </div>
-      <section className="grid grid-cols-1 gap-4 max-w-5xl mb-10 drop-shadow-xl text-sm md:grid-cols-3">
+      <section className="grid grid-cols-1 gap-4 mb-10 max-w-5xl drop-shadow-xl text-sm md:grid-cols-3">
         {newsPreviews}
       </section>
     </>

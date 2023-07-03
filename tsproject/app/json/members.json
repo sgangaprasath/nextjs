@@ -4,7 +4,7 @@
     "name": "S Ganga Prasath",
     "title": "Principal Investigator",
     "twitter": "https://twitter.com/kaitovaai",
-    "email": "emailto:sgangaprasath@smail.iitm.ac.in",
+    "email": "mailto:sgangaprasath@smail.iitm.ac.in",
     "webpage": "sgangaprasath.github.io",
     "image": "/images/sgp.jpg"
   },
@@ -13,26 +13,8 @@
     "name": "Swati Umasanker",
     "title": "In-house Doctor",
     "twitter": "",
-    "email": "emailto:sgangaprasath@smail.iitm.ac.in",
-    "webpage": "sgangaprasath.github.io",
-    "image": "/images/profile.svg"
-  },
-  {
-    "id": 2,
-    "name": "Swati Umasanker",
-    "title": "In-house Doctor",
-    "twitter": "",
-    "email": "emailto:sgangaprasath@smail.iitm.ac.in",
-    "webpage": "sgangaprasath.github.io",
-    "image": "/images/profile.svg"
-  },
-  {
-    "id": 2,
-    "name": "Swati Umasanker",
-    "title": "In-house Doctor",
-    "twitter": "",
-    "email": "emailto:sgangaprasath@smail.iitm.ac.in",
-    "webpage": "sgangaprasath.github.io",
+    "email": "",
+    "webpage": "",
     "image": "/images/profile.svg"
   }
 ]
