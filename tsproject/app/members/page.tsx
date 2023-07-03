@@ -10,6 +10,7 @@ export interface MembersMetaData {
   twitter: string;
   email: string;
   webpage: string;
+  cv: string;
   image: string;
 }
 
@@ -72,6 +73,21 @@ const MemPreview = (props: MembersMetaData) => {
           >
             <Image
               src={"/images/webpage.svg"}
+              width={15}
+              height={15}
+              alt="Personal webpage"
+            />
+          </Link>
+          )}
+          {props.cv !== '' && (
+          <Link
+            className="opacity-50 hover:opacity-100"
+            href={props.cv}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={"/images/cv.svg"}
               width={15}
               height={15}
               alt="Personal webpage"
