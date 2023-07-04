@@ -44,7 +44,13 @@ const ResearchPage = () => {
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
               Soft mechanics
             </h2>
-            <p className="text-slate-700 my-1">Mechanics of materials</p>
+            <p className="text-slate-700 my-1 text-justify">
+                Materials that can undergo large deformation under small amplitude of force are often termed soft. Soft materials are all around us, starting with
+                biological materials such as skin, hair to macroscopic materials such as sheet of paper, fabric and polymers. The mechanical response of these
+                materials is in general non-linear even when the strains are small. The primary reason for such a behaviour is the coupling between the geometry
+                and the elastic properties of the material. We are interested in both understanding the behaviour as well as controlling the response of such
+                materials.
+            </p>
           </div>
         </div>
         {/* Second topic */}
