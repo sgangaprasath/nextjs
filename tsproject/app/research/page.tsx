@@ -26,7 +26,7 @@ const ResearchPage = () => {
           <p className="font-bold px-4">Research</p>
         </h1>
       </div>
-      <section className="grid grid-cols-1 gap-4 mb-10 max-w-5xl drop-shadow-xl text-sm md:grid-cols-3">
+      <section className="grid grid-cols-1 gap-4 mb-10 max-w-5xl drop-shadow-xl text-sm md:grid-cols-2 lg:grid-cols-3">
         {/* First topic */}
         <div className="group flex flex-col items-start justify-start w-full h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors">
           <Image
@@ -38,25 +38,84 @@ const ResearchPage = () => {
             className="object-cover rounded-tl-lg rounded-tr-lg w-full h-40"
           />
           <div className="px-5 py-4">
-            <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
-              Materials
-            </p>
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
               Soft mechanics
             </h2>
-            <p className="text-slate-700 my-1 text-justify">
-                Materials that can undergo large deformation under small amplitude of force are often termed soft. Soft materials are all around us, starting with
-                biological materials such as skin, hair to macroscopic materials such as sheet of paper, fabric and polymers. The mechanical response of these
-                materials is in general non-linear even when the strains are small. The primary reason for such a behaviour is the coupling between the geometry
-                and the elastic properties of the material. We are interested in both understanding the behaviour as well as controlling the response of such
-                materials.
+            <p className="text-sm text-slate-700 my-1 text-justify">
+              Materials that can undergo large deformation under small magnitude
+              of force are termed soft. Soft materials are all around us,
+              starting with biological materials such as tissues to macroscopic
+              materials such as polymers. The mechanical response of these
+              materials is often non-linear even when the strains are small.
+              Such a behaviour is the manifestation of the coupling between the
+              geometry and the elastic properties of the material. In our lab we
+              are interested in understanding how and when these materials will
+              undergo instabilities, ways to design them with novel responses
+              and controlling their behaviour for a desired function even under
+              non-linearity.
             </p>
+            <div className="flex flex-col py-4 gap-2">
+              <p className="font-bold">Further reading</p>
+              <ul className="list-none px-2 space-y-2">
+                <li>
+                  <Link
+                    href="https://pubs.rsc.org/en/content/articlehtml/2012/sm/c2sm00011c"
+                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                  >
+                    Morphological instabilities
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href=" https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-103.pdf"
+                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                  >
+                    The elastica: a mathematical history
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.academia.edu/download/75296176/1081357172.pdf"
+                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                  >
+                    Leaves, Flowers and Garbage Bags
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.epfl.ch/labs/flexlab/wp-content/uploads/2018/03/research_fracture_tearing_graphene_cracks_marder_physicstoday_2007.pdf"
+                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                  >
+                    Crumpling, buckling, and cracking
+                  </Link>
+                </li>
+                {/* <li>
+                  <Link
+                    href="https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.79.643"
+                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                  >
+                    Elastic sheets
+                  </Link>
+                </li> */}
+              </ul>
+            </div>
+            <div className="flex flex-row gap-4">
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+                Materials
+              </p>
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+                Instability
+              </p>
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+                Control
+              </p>
+            </div>
           </div>
         </div>
         {/* Second topic */}
         <div className="group flex flex-col items-start justify-start w-full h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors">
           <Image
-            src="/images/geometric.jpg"
+            src="/images/robotic.png"
             width="0"
             height="0"
             alt="News blurb image"
@@ -64,13 +123,30 @@ const ResearchPage = () => {
             className="object-cover rounded-tl-lg rounded-tr-lg w-full h-40"
           />
           <div className="px-5 py-4">
-            <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
-              Robotics
-            </p>
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
-              Robotics & Control
+              Robotics
             </h2>
-            <p className="text-slate-700 my-1">Mechanics of materials</p>
+            <p className="text-sm text-slate-700 my-1 text-justify pb-4">
+              Materials that can undergo large deformation under small magnitude
+              of force are termed soft. Soft materials are all around us,
+              starting with biological materials such as tissues to macroscopic
+              materials such as polymers. The mechanical response of these
+              materials is often non-linear even when the strains are small.
+              Such a behaviour is the manifestation of the coupling between the
+              geometry and the elastic properties of the material. In our lab we
+              are interested in understanding how and when these materials will
+              undergo instabilities, ways to design them with novel responses
+              and controlling their behaviour for a desired function even under
+              non-linearity.
+            </p>
+            <div className="flex flex-row gap-4">
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+                Soft-robotics
+              </p>
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+                Collective behaviour
+              </p>
+            </div>
           </div>
         </div>
         {/* Third topic */}
