@@ -127,17 +127,8 @@ const ResearchPage = () => {
               Robotics
             </h2>
             <p className="text-sm text-slate-700 my-1 text-justify pb-4">
-              Materials that can undergo large deformation under small magnitude
-              of force are termed soft. Soft materials are all around us,
-              starting with biological materials such as tissues to macroscopic
-              materials such as polymers. The mechanical response of these
-              materials is often non-linear even when the strains are small.
-              Such a behaviour is the manifestation of the coupling between the
-              geometry and the elastic properties of the material. In our lab we
-              are interested in understanding how and when these materials will
-              undergo instabilities, ways to design them with novel responses
-              and controlling their behaviour for a desired function even under
-              non-linearity.
+              What constitutes as robotics can be a tricky question. As diverse a field as it is, our group is interested
+              in 
             </p>
             <div className="flex flex-row gap-4">
               <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
