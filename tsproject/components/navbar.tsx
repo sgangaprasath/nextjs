@@ -13,7 +13,7 @@ export default function NavBar() {
           <Link href={"/members"}>members</Link>
         </li>
         <li className="linkStyle">
-          <Link href={"/"}>publications</Link>
+          <Link href={"/pubs"}>publications</Link>
         </li>
         <li className="linkStyle">
           <Link href={"/"}>gallery</Link>

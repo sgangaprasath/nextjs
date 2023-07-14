@@ -3,8 +3,7 @@ import "../globals.css";
 export default function Home() {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between gap-10 max-w-5xl py-20">
-        <div className="flex flex-col items-center md:items-start justify-center gap-2 md:gap-4">
+        <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full max-w-4xl mt-20 mb-10 md:ml-20 md:gap-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <div className="p-3 bg-white dark:bg-black border border-gray-300 rounded-full opacity-60 dark:border-neutral-300">
               <svg
@@ -24,7 +23,7 @@ export default function Home() {
             </div>
             <p className="font-bold text-lg px-4">Contact</p>
           </div>
-          <p className="text-center md:text-left font-light text-md">
+          <p className="text-center md:text-left font-light text-md md:px-16">
             S Ganga Prasath <br/>
             227A, Mechanical Sciences Block <br/>
             Department of Applied Mechanics <br/>
@@ -32,7 +31,6 @@ export default function Home() {
             (044) 2257 4086
           </p>
         </div>
-      </div>
     </>
   );
 }

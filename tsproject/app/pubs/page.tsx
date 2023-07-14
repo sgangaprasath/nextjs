@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineTwitter } from "react-icons/ai";
 
-export interface MembersMetaData {
+export interface PubsMetaData {
   id: number;
   name: string;
   title: string;
@@ -14,16 +14,16 @@ export interface MembersMetaData {
   image: string;
 }
 
-const getMemContent = (): MembersMetaData[] => {
+const getMemContent = (): PubsMetaData[] => {
   const jsonString = fs.readFileSync("./app/json/members.json", "utf-8");
   const jsonData = JSON.parse(jsonString);
-  jsonData.sort(function (a: MembersMetaData, b: MembersMetaData) {
+  jsonData.sort(function (a: PubsMetaData, b: PubsMetaData) {
     return a.id - b.id;
   });
   return jsonData;
 };
 
-const MemPreview = (props: MembersMetaData) => {
+const MemPreview = (props: PubsMetaData) => {
   return (
     <div className="container flex flex-row items-center justify-center gap-4">
       <Image
@@ -41,15 +41,15 @@ const MemPreview = (props: MembersMetaData) => {
           {props.title}
         </p>
         <div className="flex flex-row items-start justify-center gap-2">
-          {props.twitter !== '' && (
-          <Link
-            className="opacity-50 hover:opacity-100"
-            href={props.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiOutlineTwitter />
-          </Link>
+          {props.twitter !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineTwitter />
+            </Link>
           )}
           <Link
             className="opacity-50 hover:opacity-100"
@@ -64,35 +64,35 @@ const MemPreview = (props: MembersMetaData) => {
               alt="Email for correspondence"
             />
           </Link>
-          {props.webpage !== '' && (
-          <Link
-            className="opacity-50 hover:opacity-100"
-            href={props.webpage}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={"/images/webpage.svg"}
-              width={15}
-              height={15}
-              alt="Personal webpage"
-            />
-          </Link>
+          {props.webpage !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.webpage}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/webpage.svg"}
+                width={15}
+                height={15}
+                alt="Personal webpage"
+              />
+            </Link>
           )}
-          {props.cv !== '' && (
-          <Link
-            className="opacity-50 hover:opacity-100"
-            href={props.cv}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={"/images/cv.svg"}
-              width={15}
-              height={15}
-              alt="Personal webpage"
-            />
-          </Link>
+          {props.cv !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.cv}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/cv.svg"}
+                width={15}
+                height={15}
+                alt="Personal webpage"
+              />
+            </Link>
           )}
         </div>
       </div>
@@ -128,21 +128,16 @@ const MembersPage = () => {
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
               />
             </svg>
           </div>
-          <p className="font-bold text-lg px-4">Members</p>
+          <p className="font-bold text-lg px-4">Publications</p>
         </div>
       </div>
       <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 mx-10 drop-shadow-xl text-sm md:grid-cols-3 max-w-4xl">
         {memPreviews}
       </section>
-      {/* <div className="border border-rose-300 bg-rose-200 text-rose-600 p-4 rounded-xl text-xs">
-        We are currently looking for MS and PhD students interested in exploring problems in the field of soft-robotics, reinforcement learning,
-        animal behaviour and control of large degree of freedom systems. Our group is interested in problem solving either through experiments or through
-        theoretical analysis as demanded by the question at hand. Have a look at the research tab for a broad overview and drop by our lab to know more.
-      </div> */}
     </div>
   );
 };
