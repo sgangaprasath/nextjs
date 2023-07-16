@@ -41,15 +41,15 @@ const MemPreview = (props: MembersMetaData) => {
           {props.title}
         </p>
         <div className="flex flex-row items-start justify-center gap-2">
-          {props.twitter !== '' && (
-          <Link
-            className="opacity-50 hover:opacity-100"
-            href={props.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiOutlineTwitter />
-          </Link>
+          {props.twitter !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiOutlineTwitter />
+            </Link>
           )}
           <Link
             className="opacity-50 hover:opacity-100"
@@ -64,35 +64,35 @@ const MemPreview = (props: MembersMetaData) => {
               alt="Email for correspondence"
             />
           </Link>
-          {props.webpage !== '' && (
-          <Link
-            className="opacity-50 hover:opacity-100"
-            href={props.webpage}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={"/images/webpage.svg"}
-              width={15}
-              height={15}
-              alt="Personal webpage"
-            />
-          </Link>
+          {props.webpage !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.webpage}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/webpage.svg"}
+                width={15}
+                height={15}
+                alt="Personal webpage"
+              />
+            </Link>
           )}
-          {props.cv !== '' && (
-          <Link
-            className="opacity-50 hover:opacity-100"
-            href={props.cv}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src={"/images/cv.svg"}
-              width={15}
-              height={15}
-              alt="Personal webpage"
-            />
-          </Link>
+          {props.cv !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.cv}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/cv.svg"}
+                width={15}
+                height={15}
+                alt="Personal webpage"
+              />
+            </Link>
           )}
         </div>
       </div>
@@ -114,7 +114,7 @@ const MembersPage = () => {
   ));
   return (
     <div className="flex flex-col items-center justify-center max-w-4xl">
-      <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full mt-20 mb-10 md:ml-20 md:gap-4">
+      <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full mt-20 mb-10">
         <div className="flex flex-col md:flex-row items-center justify-start gap-2">
           <div className="p-3 bg-white dark:bg-black border border-gray-300 rounded-full opacity-60 dark:border-neutral-300">
             <svg
@@ -135,14 +135,17 @@ const MembersPage = () => {
           <p className="font-bold text-lg px-4">Members</p>
         </div>
       </div>
-      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 mx-10 drop-shadow-xl text-sm md:grid-cols-3 max-w-4xl">
+      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 drop-shadow-xl text-sm md:grid-cols-3 max-w-4xl">
         {memPreviews}
       </section>
-      {/* <div className="border border-rose-300 bg-rose-200 text-rose-600 p-4 rounded-xl text-xs">
-        We are currently looking for MS and PhD students interested in exploring problems in the field of soft-robotics, reinforcement learning,
-        animal behaviour and control of large degree of freedom systems. Our group is interested in problem solving either through experiments or through
-        theoretical analysis as demanded by the question at hand. Have a look at the research tab for a broad overview and drop by our lab to know more.
-      </div> */}
+      <div className="border border-rose-300 bg-rose-200 max-w-2xl text-rose-600 p-4 rounded-xl text-xs">
+        We are currently looking for MS and PhD students interested in exploring
+        problems in the field of soft-robotics, reinforcement learning, animal
+        behaviour and control of large degree of freedom systems. Our group is
+        interested in problem solving either through experiments or through
+        theoretical analysis as demanded by the question at hand. Have a look at
+        the research tab for a broad overview and drop by our lab to know more.
+      </div>
     </div>
   );
 };
