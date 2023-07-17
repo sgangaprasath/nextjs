@@ -28,7 +28,7 @@ const NewsPreview = (props: NewsMetaData) => {
   return (
     <Link
       href={props.link}
-      className="group flex flex-col lg:flex-row items-start justify-start w-auto h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+      className="group flex flex-col lg:flex-row items-start justify-start w-auto h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors duration-300 ease-in-out hover:bg-gray-50 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
     >
         {props.image !== "" && (
           <Image
@@ -37,7 +37,7 @@ const NewsPreview = (props: NewsMetaData) => {
             height="0"
             alt="News blurb image"
             sizes="100vw"
-            className="object-cover grayscale rounded-tl-lg rounded-tr-lg w-full h-20 lg:h-full lg:w-28 hover:grayscale-0 lg:rounded-none lg:rounded-l-lg"
+            className="object-cover grayscale rounded-tl-lg rounded-tr-lg w-full h-20 lg:h-full lg:w-28 group-hover:grayscale-0 lg:rounded-none lg:rounded-l-lg"
           />
         )}
         <div className="px-5 py-4">
