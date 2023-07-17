@@ -2,6 +2,9 @@ import * as fs from "fs";
 import Link from "next/link";
 import Image from "next/image";
 
+export interface JsonLstFull {
+  jsonFull: PubsMetaData;
+}
 export interface PubsMetaData {
   id: number;
   year: number;
@@ -29,7 +32,7 @@ const getPubContent = (): PubsMetaData[] => {
   return jsonData;
 };
 
-const List = ({ jsonFull }) => (
+const List = ({jsonFull}: JsonLstFull) => (
   <ul>
     {jsonFull.map((jsonFull, i) => (
       <JSONFull key={i} jsonLst={jsonFull} />
@@ -37,19 +40,19 @@ const List = ({ jsonFull }) => (
   </ul>
 );
 
-const JSONFull = ({ jsonLst }) => (
-  <li>
-    <p>Type: {jsonLst.year}</p>
+const JSONFull = ({jsonLst}) => (
+  <div className="pb-4 max-w-4xl">
+    <p className="inline-block bg-green-400 text-white font-light rounded-full px-3 py-1 my-2">{jsonLst.year}</p>
     <ul>
       {jsonLst.data.map((data, i) => (
         <DataLst key={i} data={data} />
       ))}
     </ul>
-  </li>
+  </div>
 );
 
 const DataLst = ({data}) => (
-  <div>
+  <div className="mx-4 py-2">
     <p>
       {data.image !== "" && (
         <Image
@@ -62,7 +65,7 @@ const DataLst = ({data}) => (
       )}
     </p>
     <div className="grid grid-cols-10 items-start gap-2 max-w-2xl">
-      <div className="my-2 px-2 w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <div className="my-2 px-1 md:px-2 w-2 h-2 bg-green-400 rounded-full"></div>
       <div className="col-span-9 items-start justify-center">
         {/* Title */}
         <p className="text-left md:text-left font-bold pb-1">{data.title}</p>
@@ -123,23 +126,8 @@ const DataLst = ({data}) => (
           )}
         </div>
       </div>
-      {/* <div className="flex flex-row items-start justify-center gap-2">
-          {props.image !== "" && (
-            <Link
-              className="opacity-50 hover:opacity-100"
-              href={props.image}
-              target="_blank"
-              rel="noopener noreferrer"
-            ></Link>
-          )}
-        </div> */}
     </div>
   </div>
-
-  // <li>
-  //   <p>Name: {data.title}</p>
-  //   <p>Name: {data.authors}</p>
-  // </li>
 );
 
 export const generateStaticParams = async () => {
@@ -151,7 +139,6 @@ export const generateStaticParams = async () => {
 
 const PubsPage = () => {
   const posts = getPubContent();
-
   return (
     <div className="flex flex-col items-center justify-center max-w-4xl">
       <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full mt-20 mb-10">
@@ -175,18 +162,9 @@ const PubsPage = () => {
           <p className="font-bold text-lg px-4">Publications</p>
         </div>
       </div>
-      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 drop-shadow-xl text-sm max-w-4xl">
+      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 text-sm max-w-4xl">
         <List jsonFull={posts} />
-        {/* {pubData} */}
       </section>
-      <div className="border border-sky-300 bg-sky-200 max-w-2xl text-sky-600 p-4 rounded-xl text-xs">
-        We are currently looking for MS and PhD students interested in exploring
-        problems in the field of soft-robotics, reinforcement learning, animal
-        behaviour and control of large degree of freedom systems. Our group is
-        interested in problem solving either through experiments or through
-        theoretical analysis as demanded by the question at hand. Have a look at
-        the research tab for a broad overview and drop by our lab to know more.
-      </div>
     </div>
   );
 };

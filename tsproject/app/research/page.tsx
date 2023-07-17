@@ -56,11 +56,11 @@ const ResearchPage = () => {
             </p>
             <div className="flex flex-col py-4 gap-2">
               <p className="font-bold">Further reading</p>
-              <ul className="list-none px-2 space-y-2">
+              <ul className="list-none px-2 space-y-3">
                 <li>
                   <Link
                     href="https://pubs.rsc.org/en/content/articlehtml/2012/sm/c2sm00011c"
-                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   >
                     Morphological instabilities
                   </Link>
@@ -68,7 +68,7 @@ const ResearchPage = () => {
                 <li>
                   <Link
                     href=" https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-103.pdf"
-                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   >
                     The elastica: a mathematical history
                   </Link>
@@ -76,7 +76,7 @@ const ResearchPage = () => {
                 <li>
                   <Link
                     href="https://www.academia.edu/download/75296176/1081357172.pdf"
-                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   >
                     Leaves, Flowers and Garbage Bags
                   </Link>
@@ -84,7 +84,7 @@ const ResearchPage = () => {
                 <li>
                   <Link
                     href="https://www.epfl.ch/labs/flexlab/wp-content/uploads/2018/03/research_fracture_tearing_graphene_cracks_marder_physicstoday_2007.pdf"
-                    className="bg-violet-200 rounded-full px-2 py-1 text-violet-600 text-xs"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   >
                     Crumpling, buckling, and cracking
                   </Link>
@@ -100,13 +100,13 @@ const ResearchPage = () => {
               </ul>
             </div>
             <div className="flex flex-row gap-4">
-              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
                 Materials
               </p>
-              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
                 Instability
               </p>
-              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
                 Control
               </p>
             </div>
@@ -131,10 +131,10 @@ const ResearchPage = () => {
               in 
             </p>
             <div className="flex flex-row gap-4">
-              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
                 Soft-robotics
               </p>
-              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
                 Collective behaviour
               </p>
             </div>
@@ -151,7 +151,7 @@ const ResearchPage = () => {
             className="object-cover rounded-tl-lg rounded-tr-lg w-full h-40"
           />
           <div className="px-5 py-4">
-            <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+            <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
               Behaviour
             </p>
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
