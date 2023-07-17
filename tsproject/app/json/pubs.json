@@ -58,35 +58,5 @@
         "journal": "Frontiers in Physics, 10.3389/fphy.2023.1167338"
       }
     ]
-  },
-  {
-    "id": 3,
-    "year": 2025,
-    "data": [
-      {
-        "id": 1,
-        "authors": "Ganga Prasath, S., and Vishaal Krishnan.",
-        "title": "Revisiting linear filtering, the Bayesian paradigm & optimal state estimation: From least-squares to Kalman filter.",
-        "arxiv": "https://github.com/sgangaprasath/Publications/raw/master/KFTutorial.pdf",
-        "website": "",
-        "download": "",
-        "news": "",
-        "date": "",
-        "image": "",
-        "journal": ""
-      },
-      {
-        "id": 2,
-        "authors": "Divya Jaganathan, Ganga Prasath, S., Vishal Vasan and Rama Govindarajan. ",
-        "title": "The Basset-Boussinesq history force: its neglect, validity and recent numerical developments.",
-        "arxiv": "",
-        "website": "https://www.frontiersin.org/articles/10.3389/fphy.2023.1167338",
-        "download": "https://github.com/sgangaprasath/Publications/raw/master/FPhy_MiniReview_2023.pdf",
-        "news": "",
-        "date": "",
-        "image": "",
-        "journal": "Frontiers in Physics, 10.3389/fphy.2023.1167338"
-      }
-    ]
   }
 ]

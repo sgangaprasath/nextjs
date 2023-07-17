@@ -29,30 +29,117 @@ const getPubContent = (): PubsMetaData[] => {
   return jsonData;
 };
 
-const List = ({ skills }) => (
+const List = ({ jsonFull }) => (
   <ul>
-    {skills.map((skill, i) => (
-      <Skill key={i} skill={skill} />
+    {jsonFull.map((jsonFull, i) => (
+      <JSONFull key={i} jsonLst={jsonFull} />
     ))}
   </ul>
 );
 
-const Skill = ({ skill }) => (
+const JSONFull = ({ jsonLst }) => (
   <li>
-    <p>Type: {skill.year}</p>
+    <p>Type: {jsonLst.year}</p>
     <ul>
-      {skill.data.map((innerSkill, i) => (
-        <InnerSkill key={i} innerSkill={innerSkill} />
+      {jsonLst.data.map((data, i) => (
+        <DataLst key={i} data={data} />
       ))}
     </ul>
   </li>
 );
 
-const InnerSkill = ({ innerSkill }) => (
-  <li>
-    <p>Name: {innerSkill.title}</p>
-    <p>Name: {innerSkill.authors}</p>
-  </li>
+const DataLst = ({data}) => (
+  <div>
+    <p>
+      {data.image !== "" && (
+        <Image
+          src={data.image}
+          width={45}
+          height={45}
+          alt="Publication image"
+          className="transform duration-200 rounded-full grayscale hover:grayscale-0 hover:scale-125"
+        />
+      )}
+    </p>
+    <div className="grid grid-cols-10 items-start gap-2 max-w-2xl">
+      <div className="my-2 px-2 w-2 h-2 bg-emerald-500 rounded-full"></div>
+      <div className="col-span-9 items-start justify-center">
+        {/* Title */}
+        <p className="text-left md:text-left font-bold pb-1">{data.title}</p>
+        {/* Authors */}
+        <p className="text-left font-light pb-1">{data.authors}</p>
+        {/* Journal list */}
+        {data.journal !== "" && (
+          <p className="text-left italic font-light pb-1">{data.journal}</p>
+        )}
+        {/* arXiv link */}
+        <div className="flex flex-row items-start justify-start gap-1">
+          {data.arxiv !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={data.arxiv}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/arxiv.svg"}
+                width={15}
+                height={15}
+                alt="URL"
+              />
+            </Link>
+          )}
+          {/* Website link */}
+          {data.website !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={data.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/webpage.svg"}
+                width={15}
+                height={15}
+                alt="URL"
+              />
+            </Link>
+          )}
+          {/* Download link */}
+          {data.download !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={data.download}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/download.svg"}
+                width={15}
+                height={15}
+                alt="URL"
+              />
+            </Link>
+          )}
+        </div>
+      </div>
+      {/* <div className="flex flex-row items-start justify-center gap-2">
+          {props.image !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={props.image}
+              target="_blank"
+              rel="noopener noreferrer"
+            ></Link>
+          )}
+        </div> */}
+    </div>
+  </div>
+
+  // <li>
+  //   <p>Name: {data.title}</p>
+  //   <p>Name: {data.authors}</p>
+  // </li>
 );
 
 export const generateStaticParams = async () => {
@@ -89,7 +176,7 @@ const PubsPage = () => {
         </div>
       </div>
       <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 drop-shadow-xl text-sm max-w-4xl">
-      <List skills={posts} />
+        <List jsonFull={posts} />
         {/* {pubData} */}
       </section>
       <div className="border border-sky-300 bg-sky-200 max-w-2xl text-sky-600 p-4 rounded-xl text-xs">
