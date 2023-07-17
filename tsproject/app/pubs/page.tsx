@@ -17,42 +17,46 @@ export interface PubsData {
   arxiv: string;
   website: string;
   download: string;
-  news: string;
+  news1: string;
+  news2: string;
   date: string;
   image: string;
   journal: string;
+  tag: string;
 }
 
 const getPubContent = (): PubsMetaData[] => {
   const jsonString = fs.readFileSync("./app/json/pubs.json", "utf-8");
   const jsonData = JSON.parse(jsonString);
   jsonData.sort(function (a: PubsMetaData, b: PubsMetaData) {
-    return a.id - b.id;
+    return b.id - a.id;
   });
   return jsonData;
 };
 
 const List = ({jsonFull}: JsonLstFull) => (
   <ul>
-    {jsonFull.map((jsonFull, i) => (
-      <JSONFull key={i} jsonLst={jsonFull} />
+    {jsonFull.map((jsonFull: JsonLstFull, i: number) => (
+      <JSONFull key={i} jsonFull={jsonFull} />
     ))}
   </ul>
 );
 
-const JSONFull = ({jsonLst}) => (
-  <div className="pb-4 max-w-4xl">
-    <p className="inline-block bg-green-400 text-white font-light rounded-full px-3 py-1 my-2">{jsonLst.year}</p>
+const JSONFull = ({jsonFull}: JsonLstFull) => (
+  <div className="pb-4">
+    <p className="inline-block bg-green-400 text-white font-light rounded-full px-3 py-1 my-2">
+      {jsonFull.year}
+    </p>
     <ul>
-      {jsonLst.data.map((data, i) => (
-        <DataLst key={i} data={data} />
+      {jsonFull.data.map((data: PubsData, id: PubsData) => (
+        <DataLst key={id} data={data} />
       ))}
     </ul>
   </div>
 );
 
-const DataLst = ({data}) => (
-  <div className="mx-4 py-2">
+const DataLst = ({data}: PubsMetaData) => (
+  <div className="mx-4 py-2 md:max-w-xl lg:max-w-2xl">
     <p>
       {data.image !== "" && (
         <Image
@@ -65,7 +69,7 @@ const DataLst = ({data}) => (
       )}
     </p>
     <div className="grid grid-cols-10 items-start gap-2 max-w-2xl">
-      <div className="my-2 px-1 md:px-2 w-2 h-2 bg-green-400 rounded-full"></div>
+      <div className="my-2 px-1 md:px-2 w-1 h-1 bg-green-400 rounded-full"></div>
       <div className="col-span-9 items-start justify-center">
         {/* Title */}
         <p className="text-left md:text-left font-bold pb-1">{data.title}</p>
@@ -89,6 +93,7 @@ const DataLst = ({data}) => (
                 width={15}
                 height={15}
                 alt="URL"
+                className="w-4 h-4"
               />
             </Link>
           )}
@@ -123,6 +128,40 @@ const DataLst = ({data}) => (
                 alt="URL"
               />
             </Link>
+          )}
+          {/* News link */}
+          {data.news1 !== "" && (
+            <Link
+              className="opacity-50 hover:opacity-100"
+              href={data.news1}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={"/images/news.svg"}
+                width={15}
+                height={15}
+                alt="URL"
+              />
+            </Link>
+          )}
+        </div>
+        {/* Tags */}
+        <div className="flex flex-row items-start justify-start gap-1">
+          {data.tag == "Control" && (
+            <div className="rounded-lg border-2 border-rose-600 bg-rose-300 text-rose-600 text-[8pt] px-1 my-2 font-bold">
+              #CONTROL
+            </div>
+          )}
+          {data.tag == "Hydrodynamics" && (
+            <div className="rounded-lg border-2 border-violet-600 bg-violet-300 text-violet-600 text-[8pt] px-1 my-2 font-bold">
+              #HYDRODYNAMICS
+            </div>
+          )}
+          {data.tag == "Robotics" && (
+            <div className="rounded-lg border-2 border-sky-600 bg-sky-300 text-sky-600 text-[8pt] px-1 my-2 font-bold">
+              #ROBOTICS
+            </div>
           )}
         </div>
       </div>
@@ -162,7 +201,7 @@ const PubsPage = () => {
           <p className="font-bold text-lg px-4">Publications</p>
         </div>
       </div>
-      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 text-sm max-w-4xl">
+      <section className="grid grid-cols-1 mb-10 px-10 lg:px-14 text-sm">
         <List jsonFull={posts} />
       </section>
     </div>

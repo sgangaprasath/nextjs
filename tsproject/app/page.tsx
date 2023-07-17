@@ -5,13 +5,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <p className="max-w-4xl mb-10 p-2 bg-green-200 text-sm text-green-600 rounded-lg border border-green-400">
-        Welcome to the webpage of INTERFACE lab which is part of the Department
-        of Applied Mechanics and Biomedical Engineering at IIT Madras. We are
-        new and exciting group working on problems at the interface of
-        soft-mechanics, robotics & control and animal behaviour.
-      </p>
-      <div className="flex flex-col pt-40 pb-20 gap-60 items-center justify-between px-24">
+      <div className="flex flex-col pt-40 pb-20 gap-32 items-center justify-between px-24">
         {/* Lab logo */}
         <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-green-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-green-500 before:dark:opacity-10 after:dark:from-green-700 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
           <Image
@@ -22,6 +16,14 @@ export default function Home() {
             height={100}
             priority
           />
+        </div>
+        <div className="md:text-2xl text-center max-w-2xl">
+          <p className="font-light">at the intersection of</p>
+          <p className="font-extrabold">Soft-mechanics, Robotics & Behaviour</p>
+          <p className="max-w-2xl mt-10 p-2 bg-green-200 text-sm text-green-600 rounded-lg border border-green-400">
+            We are a new and exciting group in the Department of Applied Mechanics & Biomedical Engineering at IIT
+            Madras. Look around the website and drop by our lab if you are interested in knowing more about what we do!
+          </p>
         </div>
         {/* Bottom navigation links */}
         <div className="grid m-10 text-center lg:mb-4 lg:grid-cols-4 lg:text-left">
@@ -165,7 +167,7 @@ export default function Home() {
           </Link>
           {/* Outreach */}
           <Link
-            href="/outreach"
+            href="/"
             className="group flex flex-col items-center justify-center rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-200 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2
@@ -212,7 +214,6 @@ export default function Home() {
         </div>
       </div>
       {/* Notice board */}
-      
     </>
   );
 }

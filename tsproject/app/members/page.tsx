@@ -25,13 +25,13 @@ const getMemContent = (): MembersMetaData[] => {
 
 const MemPreview = (props: MembersMetaData) => {
   return (
-    <div className="container flex flex-row items-center justify-center gap-4">
+    <div className="group container flex flex-row items-center justify-center gap-4">
       <Image
         src={props.image}
         width={45}
         height={45}
         alt="Picture of the lab member"
-        className="transform duration-200 rounded-full grayscale hover:grayscale-0 hover:scale-125"
+        className="transform duration-200 rounded-full grayscale group-hover:grayscale-0 hover:scale-125"
       />
       <div className="flex flex-col items-start justify-center">
         <p className="text-center md:text-left font-semibold text-md">
