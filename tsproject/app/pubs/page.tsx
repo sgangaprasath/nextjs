@@ -45,7 +45,7 @@ const List = ({ jsonFull }: JsonLstFull) => (
 
 const JSONFull = ({ jsonFull }: JsonLstFull) => (
   <div className="pb-4">
-    <p className="inline-block bg-gray-800 text-white font-light rounded-full px-3 py-1 my-2">
+    <p className="inline-block bg-black text-white font-light rounded-full px-3 py-1 my-2">
       {jsonFull.year}
     </p>
     <ul>

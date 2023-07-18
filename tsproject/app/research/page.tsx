@@ -26,11 +26,12 @@ const ResearchPage = () => {
           <p className="font-bold px-4">Research</p>
         </h1>
       </div>
-      <section className="grid grid-cols-1 gap-4 mb-10 max-w-5xl drop-shadow-xl text-sm md:grid-cols-2 lg:grid-cols-3">
+      <section className="grid grid-cols-1 items-start gap-4 mb-10 max-w-5xl drop-shadow-xl text-sm md:grid-cols-2 lg:grid-cols-3">
         {/* First topic */}
         <div className="group flex flex-col items-start justify-start w-full h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors">
           <Image
-            src="/images/geometric.jpg"
+            // src="/images/geometric.jpg"
+            src="/images/soft.jpg"
             width="0"
             height="0"
             alt="News blurb image"
@@ -67,7 +68,7 @@ const ResearchPage = () => {
                 </li>
                 <li>
                   <Link
-                    href=" https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-103.pdf"
+                    href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-103.pdf"
                     className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                   >
                     The elastica: a mathematical history
@@ -126,16 +127,65 @@ const ResearchPage = () => {
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
               Robotics
             </h2>
-            <p className="text-sm text-slate-700 my-1 text-justify pb-4">
-              What constitutes as robotics can be a tricky question. As diverse a field as it is, our group is interested
-              in 
+            <p className="text-sm text-slate-700 my-1 text-justify">
+              What constitutes as robotics can be a tricky question. As diverse
+              a field as it is, our group is interested in developing platforms
+              where custom-built agents can perceive their environment, make
+              measurements and take actions after integrating and processing the
+              information. The actions that these agents take affect both their
+              response as well as their environment. The agent-environment
+              approach falls under the paradigm of embodiment and we are
+              interested in utilising pattern formation approach to achieve
+              tasks in complex settings. Important questions include, but not
+              limited to, active learning in collectives, morphological
+              intelligence, hierarchical control and so on.
             </p>
+            <div className="flex flex-col py-4 gap-2">
+              <p className="font-bold">Further reading</p>
+              <ul className="list-none px-2 space-y-3">
+                <li>
+                  <Link
+                    href="https://www.jstor.org/stable/pdf/20051596.pdf"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Self-organization and embodiment
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="http://people.csail.mit.edu/brooks/papers/elephants.pdf"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Elephants don't play chess
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.jstor.org/stable/pdf/24917274.pdf"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Biorobotics
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="http://people.csail.mit.edu/iida/papers/pfeifer_iida_JSM05.pdf"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Morphological computation
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <div className="flex flex-row gap-4">
               <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
-                Soft-robotics
+                Pattern formation
               </p>
               <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
-                Collective behaviour
+                Learning
+              </p>
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
+                Bio-robotics
               </p>
             </div>
           </div>
@@ -143,7 +193,7 @@ const ResearchPage = () => {
         {/* Third topic */}
         <div className="group flex flex-col items-start justify-start w-full h-auto bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-neutral-600 transition-colors">
           <Image
-            src="/images/geometric.jpg"
+            src="/images/ants.jpeg"
             width="0"
             height="0"
             alt="News blurb image"
@@ -154,10 +204,73 @@ const ResearchPage = () => {
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
               Behaviour
             </h2>
-            <p className="text-slate-700 my-1">Mechanics of materials</p>
-            <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
-              Learning
+            <p className="text-sm text-slate-700 my-1 text-justify">
+              A sequence of actions performed by an individual/animal is termed
+              behaviour. These motor actions often have a cause and effect,
+              often involving decisions made based on available information.
+              Nikolaas Tinbergen, one of the founders of the field of ethology
+              (the study of animal behaviour), classifies levels of analysis of
+              animal behaviour into four categories:
             </p>
+            <ul className="list-disc px-5">
+              <li>causation</li>
+              <li>evolution/phylogeny</li>
+              <li>adaptation</li>
+              <li>development/ontogeny</li>
+            </ul>
+            <p className="text-sm text-slate-700 text-justify pt-2">
+              We are interested in understanding the decision-making aspect in
+              insects, and how they come up with new strategies to solve a
+              particular problem in novel environments.
+            </p>
+            <div className="flex flex-col py-4 gap-2">
+              <p className="font-bold">Further reading</p>
+              <ul className="list-none px-2 space-y-3">
+              <li>
+                  <Link
+                    href="https://www.reed.edu/biology/courses/BIO342/2015_syllabus/2015_readings/Tinb_1963.pdf"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Aims and methods of Ethology
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.jasss.org/4/1/reviews/kluegl.html"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Swarm intelligence
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://journals.biologists.com/jeb/article/220/1/83/33438/When-social-behaviour-is-moulded-in-clay-on-growth"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    Social behaviour moulded in clay
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.academia.edu/50568923/What_are_Social_Insects"
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-md rounded-full text-xs px-2 py-1 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  >
+                    What are social insects?
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-row gap-4">
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+                Cooperation
+              </p>
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+                Decision-making
+              </p>
+              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+                Navigation
+              </p>
+            </div>
           </div>
         </div>
       </section>

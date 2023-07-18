@@ -28,7 +28,7 @@ const HomePage = () => {
         </div>
         <p className="font-bold px-4">Blog</p>
       </h1>
-      <section className="grid grid-cols-1 gap-4 drop-shadow-xl text-sm md:grid-cols-3">
+      <section className="grid grid-cols-1 items-start gap-4 drop-shadow-xl text-sm md:grid-cols-3">
         {postPreviews}
       </section>
     </div>
