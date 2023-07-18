@@ -18,7 +18,7 @@ const PostPreview = (props: PostMetadata) => {
         {props.title}
       </h2>
       <p className="text-slate-700 my-1">{props.subtitle}</p>
-      <div className="flex flex-row items-center justify-start w-full mt-2 pt-3 border-t">
+      {/* <div className="flex flex-row items-center justify-start w-full mt-2 pt-3 border-t">
         <Image
           src={props.image}
           width={40}
@@ -30,7 +30,7 @@ const PostPreview = (props: PostMetadata) => {
           <p className="px-2 text-sm font-normal">{props.author}</p>
           <p className="px-2 text-xs text-gray-400">{props.desig}</p>
         </div>
-      </div>
+      </div> */}
     </Link>
   );
 };

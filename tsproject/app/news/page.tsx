@@ -44,7 +44,7 @@ const NewsPreview = (props: NewsMetaData) => {
           <div className="flex flex-row w-full items-center justify-between mb-1">
             <p className="text-xs text-gray-400">{props.date}</p>
             {props.tag == "Behaviour" && (
-            <div className="px-2 bg-violet-200 rounded-full text-[10px] font-normal text-violet-600">
+            <div className="px-2 bg-sky-200 rounded-full text-[10px] font-normal text-sky-600">
               {props.tag}
             </div>
             )}

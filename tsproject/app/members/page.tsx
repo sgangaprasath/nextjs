@@ -135,7 +135,7 @@ const MembersPage = () => {
           <p className="font-bold text-lg px-4">Members</p>
         </div>
       </div>
-      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 drop-shadow-xl text-sm md:grid-cols-3 max-w-4xl">
+      <section className="grid grid-cols-1 gap-10 md:gap-10 lg:gap-20 mb-10 px-10 lg:px-14 text-sm md:grid-cols-3 max-w-4xl">
         {memPreviews}
       </section>
       <div className="border border-rose-300 bg-rose-200 max-w-2xl text-rose-600 p-4 rounded-xl text-xs">

@@ -1,6 +1,7 @@
 import * as fs from "fs";
 import Link from "next/link";
 import Image from "next/image";
+import "../globals.css";
 
 export interface JsonLstFull {
   jsonFull: PubsMetaData;
@@ -34,7 +35,7 @@ const getPubContent = (): PubsMetaData[] => {
   return jsonData;
 };
 
-const List = ({jsonFull}: JsonLstFull) => (
+const List = ({ jsonFull }: JsonLstFull) => (
   <ul>
     {jsonFull.map((jsonFull: JsonLstFull, i: number) => (
       <JSONFull key={i} jsonFull={jsonFull} />
@@ -42,9 +43,9 @@ const List = ({jsonFull}: JsonLstFull) => (
   </ul>
 );
 
-const JSONFull = ({jsonFull}: JsonLstFull) => (
+const JSONFull = ({ jsonFull }: JsonLstFull) => (
   <div className="pb-4">
-    <p className="inline-block bg-green-400 text-white font-light rounded-full px-3 py-1 my-2">
+    <p className="inline-block bg-gray-800 text-white font-light rounded-full px-3 py-1 my-2">
       {jsonFull.year}
     </p>
     <ul>
@@ -55,7 +56,7 @@ const JSONFull = ({jsonFull}: JsonLstFull) => (
   </div>
 );
 
-const DataLst = ({data}: PubsMetaData) => (
+const DataLst = ({ data }: PubsMetaData) => (
   <div className="mx-4 py-2 md:max-w-xl lg:max-w-2xl">
     <p>
       {data.image !== "" && (
@@ -69,7 +70,7 @@ const DataLst = ({data}: PubsMetaData) => (
       )}
     </p>
     <div className="grid grid-cols-10 items-start gap-2 max-w-2xl">
-      <div className="my-2 px-1 md:px-2 w-1 h-1 bg-green-400 rounded-full"></div>
+      <div className="my-2 px-1 md:px-2 w-1 h-1 bg-black rounded-full"></div>
       <div className="col-span-9 items-start justify-center">
         {/* Title */}
         <p className="text-left md:text-left font-bold pb-1">{data.title}</p>
@@ -149,18 +150,28 @@ const DataLst = ({data}: PubsMetaData) => (
         {/* Tags */}
         <div className="flex flex-row items-start justify-start gap-1">
           {data.tag == "Control" && (
-            <div className="rounded-lg border-2 border-rose-600 bg-rose-300 text-rose-600 text-[8pt] px-1 my-2 font-bold">
-              #CONTROL
+            <div className="rounded-md bg-rose-300 text-rose-600 text-xs px-1 my-2 font-mono">
+              #control
             </div>
           )}
           {data.tag == "Hydrodynamics" && (
-            <div className="rounded-lg border-2 border-violet-600 bg-violet-300 text-violet-600 text-[8pt] px-1 my-2 font-bold">
-              #HYDRODYNAMICS
+            <div className="rounded-md bg-violet-300 text-violet-600 text-xs px-1 my-2 font-mono">
+            #hydrodynamics
             </div>
           )}
           {data.tag == "Robotics" && (
-            <div className="rounded-lg border-2 border-sky-600 bg-sky-300 text-sky-600 text-[8pt] px-1 my-2 font-bold">
-              #ROBOTICS
+            <div className="rounded-md bg-amber-300 text-amber-600 text-xs px-1 my-2 font-mono">
+            #robotics
+            </div>
+          )}
+          {data.tag == "Softmatter" && (
+            <div className="rounded-md bg-lime-300 text-lime-600 text-xs px-1 my-2 font-mono">
+            #soft-matter
+            </div>
+          )}
+          {data.tag == "Behaviour" && (
+            <div className="rounded-md bg-sky-300 text-sky-600 text-xs px-1 my-2 font-mono">
+            #behaviour
             </div>
           )}
         </div>

@@ -100,13 +100,13 @@ const ResearchPage = () => {
               </ul>
             </div>
             <div className="flex flex-row gap-4">
-              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+              <p className="px-2 bg-lime-200 w-fit rounded-full text-[10px] font-normal text-lime-600">
                 Materials
               </p>
-              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+              <p className="px-2 bg-lime-200 w-fit rounded-full text-[10px] font-normal text-lime-600">
                 Instability
               </p>
-              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+              <p className="px-2 bg-lime-200 w-fit rounded-full text-[10px] font-normal text-lime-600">
                 Control
               </p>
             </div>
@@ -131,10 +131,10 @@ const ResearchPage = () => {
               in 
             </p>
             <div className="flex flex-row gap-4">
-              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
                 Soft-robotics
               </p>
-              <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+              <p className="px-2 bg-amber-200 w-fit rounded-full text-[10px] font-normal text-amber-600">
                 Collective behaviour
               </p>
             </div>
@@ -151,13 +151,13 @@ const ResearchPage = () => {
             className="object-cover rounded-tl-lg rounded-tr-lg w-full h-40"
           />
           <div className="px-5 py-4">
-            <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
-              Behaviour
-            </p>
             <h2 className="font-bold text-2xl mb-1 bg-gradient-to-r from-gray-400 via-gray-700 to-black text-transparent bg-clip-text">
-              Animal Behaviour
+              Behaviour
             </h2>
             <p className="text-slate-700 my-1">Mechanics of materials</p>
+            <p className="px-2 bg-sky-200 w-fit rounded-full text-[10px] font-normal text-sky-600">
+              Learning
+            </p>
           </div>
         </div>
       </section>
