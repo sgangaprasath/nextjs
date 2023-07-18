@@ -6,11 +6,13 @@ import "../globals.css";
 export interface JsonLstFull {
   jsonFull: PubsMetaData;
 }
+
 export interface PubsMetaData {
   id: number;
   year: number;
   data: PubsData;
 }
+
 export interface PubsData {
   id: number;
   authors: string;
@@ -35,28 +37,28 @@ const getPubContent = (): PubsMetaData[] => {
   return jsonData;
 };
 
-const List = ({ jsonFull }: JsonLstFull) => (
+const List = ({jsonFull}: any) => (
   <ul>
-    {jsonFull.map((jsonFull: JsonLstFull, i: number) => (
+    {jsonFull.map((jsonFull: any, i: number) => (
       <JSONFull key={i} jsonFull={jsonFull} />
     ))}
   </ul>
 );
 
-const JSONFull = ({ jsonFull }: JsonLstFull) => (
+const JSONFull = ({jsonFull}: any) => (
   <div className="pb-4">
-    <p className="inline-block bg-black text-white font-light rounded-full px-3 py-1 my-2">
+    <p className="inline-block bg-gray-800 text-white font-light rounded-full px-3 py-1 my-2">
       {jsonFull.year}
     </p>
     <ul>
-      {jsonFull.data.map((data: PubsData, id: PubsData) => (
+      {jsonFull.data.map((data: PubsData, id: number) => (
         <DataLst key={id} data={data} />
       ))}
     </ul>
   </div>
 );
 
-const DataLst = ({ data }: PubsMetaData) => (
+const DataLst = ({data}: any) => (
   <div className="mx-4 py-2 md:max-w-xl lg:max-w-2xl">
     <p>
       {data.image !== "" && (
@@ -156,22 +158,22 @@ const DataLst = ({ data }: PubsMetaData) => (
           )}
           {data.tag == "Hydrodynamics" && (
             <div className="rounded-md bg-violet-300 text-violet-600 text-xs px-1 my-2 font-mono">
-            #hydrodynamics
+              #hydrodynamics
             </div>
           )}
           {data.tag == "Robotics" && (
             <div className="rounded-md bg-amber-300 text-amber-600 text-xs px-1 my-2 font-mono">
-            #robotics
+              #robotics
             </div>
           )}
           {data.tag == "Softmatter" && (
             <div className="rounded-md bg-lime-300 text-lime-600 text-xs px-1 my-2 font-mono">
-            #soft-matter
+              #soft-matter
             </div>
           )}
           {data.tag == "Behaviour" && (
             <div className="rounded-md bg-sky-300 text-sky-600 text-xs px-1 my-2 font-mono">
-            #behaviour
+              #behaviour
             </div>
           )}
         </div>
@@ -213,10 +215,11 @@ const PubsPage = () => {
         </div>
       </div>
       <section className="grid grid-cols-1 mb-10 px-10 lg:px-14 text-sm">
-        <List jsonFull={posts} />
+        <List jsonFull={posts} {...posts} />
       </section>
     </div>
   );
 };
 
 export default PubsPage;
+
