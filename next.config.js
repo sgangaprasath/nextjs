@@ -5,7 +5,8 @@
 const nextConfig = {
   output: 'export',
   reactStrictMode: true,
-  path: '/',
+  loader: "akamai",
+  path: '/nextjs',
  // Add basePath
   basePath: '/nextjs',
   // Optional: Add a trailing slash to all paths `/about` -> `/about/`
